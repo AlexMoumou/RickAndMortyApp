@@ -21,7 +21,7 @@ extension CharactersResponseDTO {
 }
 
 // MARK: - Info
-struct Info: Codable {
+struct Info: Codable, Equatable {
     let count, pages: Int
     let next, prev: String?
 }

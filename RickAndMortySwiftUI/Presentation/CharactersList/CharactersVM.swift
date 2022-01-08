@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import Resolver
+import SwiftUI
 
 enum RequestState {
     case inProgress
@@ -22,22 +23,34 @@ class CharactersVM: ObservableObject {
     
     @Published var requestState: RequestState = .idle
     @Published var charactersList : [Character] = []
+    //    @State private var info: Info? = nil
     
     private var cancelables = [AnyCancellable]()
-    private var page = 0
+    private var page = 1
     private var totalPages = 0
-
+    @Published var hasMorePages = false
+    
     init() {
-        loadNextPage()
+        loadPage()
     }
     
-    private func loadNextPage() {
-        print("loading more characters")
+    private func loadPage() {
         getCharactersPage.execute(page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] response in
-                self?.charactersList = response
+                
+                self?.totalPages = response.info.pages
+                self?.page += 1
+                self?.charactersList.append(contentsOf: response.characters)
+                
             })
             .store(in: &cancelables)
+    }
+    
+    func loadNextPage() {
+        if page < totalPages {
+            hasMorePages = true
+            loadPage()
+        }
     }
 }

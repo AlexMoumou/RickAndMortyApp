@@ -13,7 +13,7 @@ class CharacterRepo: ICharacterRepo {
     
     @Injected private var characterRemoteSource: ICharactersRemoteSource
     
-    func getCharacters(page: Int) -> AnyPublisher<[Character], Error> {
+    func getCharacters(page: Int) -> AnyPublisher<CharacterListState, Error> {
         characterRemoteSource.getCharacters(page: page)
     }
     

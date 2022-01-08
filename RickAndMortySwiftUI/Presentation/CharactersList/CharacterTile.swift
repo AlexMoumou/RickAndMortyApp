@@ -26,7 +26,7 @@ struct CharacterTile: View {
             }.padding()
             Spacer()
         }.background(Color.gray.opacity(0.6))
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 150, maxHeight: 250, alignment: .leading)
             .background(Color.black)
             .cornerRadius(10.0)
             .shadow(color: Color.black.opacity(0.2), radius: 2, x: 5, y: 5)
