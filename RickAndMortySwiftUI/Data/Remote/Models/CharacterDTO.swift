@@ -28,7 +28,8 @@ extension CharacterDTO {
                   species: species,
                   gender: gender.rawValue,
                   image: image,
-                  url: url)
+                  url: url,
+                  location: location.mapToDomain())
     }
 }
 

@@ -11,3 +11,9 @@ struct LocationDTO: Codable {
     let name: String
     let url: String
 }
+
+extension LocationDTO {
+    func mapToDomain() -> Location {
+        Location(name: name, url: url)
+    }
+}
