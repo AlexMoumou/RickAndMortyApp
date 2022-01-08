@@ -21,6 +21,13 @@ struct CharactersView: View {
                         CharacterTile(character: character)
                     }.listStyle(.grouped)
                     
+                    
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .onAppear {
+                            vm.loadNextPage()
+                        }.disabled(!vm.hasMorePages)
+                    
                 }.navigationTitle("Rick and Morty")
             }
         }

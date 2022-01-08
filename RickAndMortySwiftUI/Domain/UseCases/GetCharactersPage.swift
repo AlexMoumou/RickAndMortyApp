@@ -11,13 +11,13 @@ import Resolver
 
 /// Observe `Character`s
 protocol IGetCharactersPageUC {
-    func execute(page: Int) -> AnyPublisher<[Character], Error>
+    func execute(page: Int) -> AnyPublisher<CharacterListState, Error>
 }
 
 class GetCharactersPageUC: IGetCharactersPageUC {
     @Injected private var charactersRepo: ICharacterRepo
 
-    func execute(page: Int) -> AnyPublisher<[Character], Error> {
+    func execute(page: Int) -> AnyPublisher<CharacterListState, Error> {
         return charactersRepo.getCharacters(page: page)
     }
 }

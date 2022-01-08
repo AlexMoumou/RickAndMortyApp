@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 protocol ICharacterRepo {
-    func getCharacters(page: Int) -> AnyPublisher<[Character], Error>
+    func getCharacters(page: Int) -> AnyPublisher<CharacterListState, Error>
     func getCharacter(by id: Int) -> AnyPublisher<Character?, Error>
 }

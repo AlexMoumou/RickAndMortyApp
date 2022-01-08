@@ -34,8 +34,9 @@ extension CharacterDTO {
 
 enum Gender: String, Codable {
     case female = "Female"
-    case male = "Male"
-    case unknown = "unknown"
+        case genderless = "Genderless"
+        case male = "Male"
+        case unknown = "unknown"
 }
 
 enum Status: String, Codable {

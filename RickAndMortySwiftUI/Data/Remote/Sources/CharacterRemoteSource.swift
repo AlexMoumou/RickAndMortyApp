@@ -10,7 +10,7 @@ import Combine
 import Resolver
 
 protocol ICharactersRemoteSource {
-    func getCharacters(page: Int) -> AnyPublisher<[Character], Error>
+    func getCharacters(page: Int) -> AnyPublisher<CharacterListState, Error>
     func getCharacter(by id: Int) -> AnyPublisher<Character?, Error>
 }
 
@@ -18,10 +18,10 @@ class CharactersRemoteSource: ICharactersRemoteSource {
     
     @Injected private var restClient: IRestClient
     
-    func getCharacters(page: Int) -> AnyPublisher<[Character], Error> {
+    func getCharacters(page: Int) -> AnyPublisher<CharacterListState, Error> {
         restClient.get(RickAndMortyApiEndpoint.characters(page))
             .map { (charactersResponse: CharactersResponseDTO) in
-                charactersResponse.characters.map { $0.mapToDomain() }
+                CharacterListState(info: charactersResponse.info, characters: charactersResponse.characters.map{ $0.mapToDomain() })
             }.eraseToAnyPublisher()
     }
     
@@ -33,11 +33,5 @@ class CharactersRemoteSource: ICharactersRemoteSource {
             .eraseToAnyPublisher()
     }
     
-    //    func post(answer: Answer) -> AnyPublisher<Answer, Error> {
-    //        restClient.post(SurveyApiEndpoint.questionSubmit, using: answer.mapToRemote())
-    //            .map { _ in
-    //                answer
-    //            }.eraseToAnyPublisher()
-    //    }
 }
 
