@@ -18,15 +18,19 @@ struct CharactersView: View {
                 LazyVStack {
                     
                     ForEach (vm.charactersList) { character in
-                        CharacterTile(character: character)
+                        NavigationLink(destination: CharacterDetailsView(character: character)) {
+                            CharacterTile(character: character)
+                        }
                     }.listStyle(.grouped)
                     
+                    if(vm.hasMorePages) {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .onAppear {
+                                vm.loadPage()
+                            }.disabled(!vm.hasMorePages)
+                    }
                     
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .onAppear {
-                            vm.loadNextPage()
-                        }.disabled(!vm.hasMorePages)
                     
                 }.navigationTitle("Rick and Morty")
             }

@@ -34,7 +34,7 @@ class CharactersVM: ObservableObject {
         loadPage()
     }
     
-    private func loadPage() {
+    func loadPage() {
         getCharactersPage.execute(page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] response in
@@ -43,14 +43,12 @@ class CharactersVM: ObservableObject {
                 self?.page += 1
                 self?.charactersList.append(contentsOf: response.characters)
                 
+                if let pages = self?.page, let total = self?.totalPages, total > pages {
+                    self?.hasMorePages = true
+                } else {
+                    self?.hasMorePages = false
+                }
             })
             .store(in: &cancelables)
-    }
-    
-    func loadNextPage() {
-        if page < totalPages {
-            hasMorePages = true
-            loadPage()
-        }
     }
 }

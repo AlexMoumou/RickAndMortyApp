@@ -16,9 +16,7 @@ struct CharacterTile: View {
         HStack {
             KFImage(URL(string: character.image))
                 .resizable(capInsets: EdgeInsets(top: .zero, leading:  .zero, bottom:  .zero, trailing:  .zero), resizingMode: .stretch)
-//                            .clipShape(Circle())
                             .frame(width: 150, alignment: .leading)
-//                            .padding(.all, 10)
             VStack(alignment: .leading, spacing: 5) {
                 Text(character.name)
                     .font(.title3)
