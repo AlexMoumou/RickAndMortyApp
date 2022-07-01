@@ -13,6 +13,7 @@ struct Character: Equatable, Identifiable {
     let gender: String
     let image: String
     let url: String
+    let location: Location
 }
 
 extension Character {
@@ -24,6 +25,7 @@ extension Character {
                          species: "Human",
                          gender: "Male",
                          image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-                         url: "https://rickandmortyapi.com/api/location/3")
+                         url: "https://rickandmortyapi.com/api/location/3",
+                         location: Location.example())
     }
 }

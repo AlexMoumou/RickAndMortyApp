@@ -15,18 +15,29 @@ struct CharacterTile: View {
     var body: some View {
         HStack {
             KFImage(URL(string: character.image))
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 100.0, height: 100.0, alignment: .center)
-                .padding(.all, 20)
+                .resizable(capInsets: EdgeInsets(top: .zero, leading:  .zero, bottom:  .zero, trailing:  .zero), resizingMode: .stretch)
+                            .frame(width: 150, alignment: .leading)
             VStack(alignment: .leading, spacing: 5) {
-                Text(character.name).font(.title2).foregroundColor(.white)
-                Text(character.status).foregroundColor(.white)
+                Text(character.name)
+                    .font(.title3)
+                    .fontWeight(.heavy)
+                    .foregroundColor(.white)
+                HStack {
+                    Circle()
+                        .fill(character.status == "Alive" ? Color.green :
+                                character.status == "Dead" ? Color.red :
+                                Color.gray)
+                        .frame(width: 10, height: 10, alignment: .leading)
+                    
+                    Text(character.status + " - " + character.species).foregroundColor(.white)
+                }
+                Text("Last known location:").foregroundColor(Color(.systemGray2))
+                Text(character.location.name).foregroundColor(.white)
                 Spacer()
             }.padding()
             Spacer()
         }.background(Color.gray.opacity(0.6))
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 150, maxHeight: 250, alignment: .leading)
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 150, maxHeight: 150, alignment: .leading)
             .background(Color.black)
             .cornerRadius(10.0)
             .shadow(color: Color.black.opacity(0.2), radius: 2, x: 5, y: 5)

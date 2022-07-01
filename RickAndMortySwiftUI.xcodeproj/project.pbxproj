@@ -20,6 +20,9 @@
 		FA0D9E3B277DF96500234FE5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9E3A277DF96500234FE5 /* Endpoint.swift */; };
 		FA0D9E3D277DFB9200234FE5 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9E3C277DFB9200234FE5 /* RestClient.swift */; };
 		FA0D9E3F277DFBB300234FE5 /* RestClientErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D9E3E277DFBB300234FE5 /* RestClientErrors.swift */; };
+		FA2258572789D83700EEDC31 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2258562789D83700EEDC31 /* Location.swift */; };
+		FA3FC231286F99C00024A128 /* GetCharacterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FC230286F99C00024A128 /* GetCharacterDetails.swift */; };
+		FA3FC233286F9B910024A128 /* CharacterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3FC232286F9B910024A128 /* CharacterDetailsView.swift */; };
 		FA95E1A3277E469B0047898A /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95E1A2277E469B0047898A /* AppServices.swift */; };
 		FA95E1A8277E4ACE0047898A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95E1A7277E4ACE0047898A /* Character.swift */; };
 		FA95E1AA277E4B210047898A /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95E1A9277E4B210047898A /* CharacterDTO.swift */; };
@@ -74,6 +77,9 @@
 		FA0D9E3A277DF96500234FE5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FA0D9E3C277DFB9200234FE5 /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		FA0D9E3E277DFBB300234FE5 /* RestClientErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientErrors.swift; sourceTree = "<group>"; };
+		FA2258562789D83700EEDC31 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FA3FC230286F99C00024A128 /* GetCharacterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacterDetails.swift; sourceTree = "<group>"; };
+		FA3FC232286F9B910024A128 /* CharacterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsView.swift; sourceTree = "<group>"; };
 		FA95E1A2277E469B0047898A /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
 		FA95E1A7277E4ACE0047898A /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		FA95E1A9277E4B210047898A /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 			children = (
 				FA95E1A7277E4ACE0047898A /* Character.swift */,
 				FAA67F952781D5FA001475CE /* CharacterListState.swift */,
+				FA2258562789D83700EEDC31 /* Location.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				FA95E1B0277F2AA90047898A /* GetCharactersPage.swift */,
+				FA3FC230286F99C00024A128 /* GetCharacterDetails.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -331,6 +339,7 @@
 		FAA761902780697F000A334F /* CharacterDetails */ = {
 			isa = PBXGroup;
 			children = (
+				FA3FC232286F9B910024A128 /* CharacterDetailsView.swift */,
 			);
 			path = CharacterDetails;
 			sourceTree = "<group>";
@@ -576,6 +585,7 @@
 				FA95E1BD277F76B10047898A /* CharactersVM.swift in Sources */,
 				FAA67F962781D5FA001475CE /* CharacterListState.swift in Sources */,
 				FA95E1AC277F264C0047898A /* LocationDTO.swift in Sources */,
+				FA3FC231286F99C00024A128 /* GetCharacterDetails.swift in Sources */,
 				FA95E1B1277F2AA90047898A /* GetCharactersPage.swift in Sources */,
 				FA0D9E3D277DFB9200234FE5 /* RestClient.swift in Sources */,
 				FA95E1B3277F2B800047898A /* ICharacterRepo.swift in Sources */,
@@ -587,7 +597,9 @@
 				FA95E1B9277F2F530047898A /* CharacterRemoteSource.swift in Sources */,
 				FA95E1AF277F28520047898A /* Extensions.swift in Sources */,
 				FA0D9E3F277DFBB300234FE5 /* RestClientErrors.swift in Sources */,
+				FA2258572789D83700EEDC31 /* Location.swift in Sources */,
 				FA95E1A3277E469B0047898A /* AppServices.swift in Sources */,
+				FA3FC233286F9B910024A128 /* CharacterDetailsView.swift in Sources */,
 				FA0D9E3B277DF96500234FE5 /* Endpoint.swift in Sources */,
 				FAA76192278069AE000A334F /* CharacterTile.swift in Sources */,
 				FA0D9E08277DE30900234FE5 /* RickAndMortySwiftUIApp.swift in Sources */,
