@@ -16,11 +16,11 @@ struct CharactersView: View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    
                     ForEach (vm.charactersList) { character in
                         NavigationLink(destination: CharacterDetailsView(character: character)) {
                             CharacterTile(character: character)
                         }
+                        .buttonStyle(CustomButtonStyle())
                     }.listStyle(.grouped)
                     
                     if(vm.hasMorePages) {
@@ -35,6 +35,16 @@ struct CharactersView: View {
                 }.navigationTitle("Rick and Morty")
             }
         }
+    }
+}
+
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.8 : 1.0)
+            .blur(radius: configuration.isPressed ? 0.8 : 0.0)
+            .scaleEffect(configuration.isPressed ? 0.8 : 1.0)
+            .animation(.easeIn, value: configuration.isPressed ? 0.8 : 1.0)
     }
 }
 
