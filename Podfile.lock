@@ -1,20 +1,24 @@
 PODS:
   - Kingfisher (7.1.2)
   - Resolver (1.5.0)
+  - SnapshotTesting (1.9.0)
 
 DEPENDENCIES:
   - Kingfisher
   - Resolver
+  - SnapshotTesting (~> 1.9.0)
 
 SPEC REPOS:
   trunk:
     - Kingfisher
     - Resolver
+    - SnapshotTesting
 
 SPEC CHECKSUMS:
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   Resolver: 68984624572763018fd8ec7b8e3e8df0e3b6bba5
+  SnapshotTesting: 6141c48b6aa76ead61431ca665c14ab9a066c53b
 
-PODFILE CHECKSUM: 9d91cfee584d58041b2ab1f1bbf86da37c089a7d
+PODFILE CHECKSUM: 4e567f9b2afa25345814210e07b456502f661157
 
 COCOAPODS: 1.11.3

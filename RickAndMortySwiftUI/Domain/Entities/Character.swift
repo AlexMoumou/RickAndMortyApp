@@ -28,4 +28,26 @@ extension Character {
                          url: "https://rickandmortyapi.com/api/location/3",
                          location: Location.example())
     }
+    
+    func copyWith(
+        id: Int? = nil,
+        name: String? = nil,
+        status: String? = nil,
+        species: String? = nil,
+        gender: String? = nil,
+        image: String? = nil,
+        url: String? = nil,
+        location: Location? = nil
+    ) -> Character {
+            return Character(
+                id: id ?? self.id,
+                name: name ?? self.name,
+                status: status ?? self.status,
+                species: species ?? self.species,
+                gender: gender ?? self.gender,
+                image: image ?? self.image,
+                url: url ?? self.url,
+                location: location ?? self.location
+            )
+    }
 }

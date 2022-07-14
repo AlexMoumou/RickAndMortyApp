@@ -16,13 +16,14 @@ struct CharacterDetailsView: View {
     
     var body: some View {
         VStack {
-            KFImage(URL(string: character.image)).resizable().scaledToFit()
+            KFImage(URL(string: character.image))
+                .resizable()
+                .scaledToFit()
             HStack(alignment: .top, spacing: 100) {
                 Text("Gender: \(character.gender)")
                 Text("Species: \(character.species)")
                 Spacer()
-            }
-
+            }.padding()
             Spacer()
         }.navigationTitle(character.name)
             .navigationBarTitleDisplayMode(.large)

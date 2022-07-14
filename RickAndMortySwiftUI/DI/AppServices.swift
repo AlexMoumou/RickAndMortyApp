@@ -44,7 +44,7 @@ extension Resolver: ResolverRegistering {
 
     /// Registers use cases.
     private static func registerUseCases() {
-        register { GetCharactersPageUC() as IGetCharactersPageUC }
+        register { GetCharactersPageUC() }.implements(IGetCharactersPageUC.self)
     }
 }
 

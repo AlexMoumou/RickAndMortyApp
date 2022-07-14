@@ -19,19 +19,21 @@ struct CharactersView: View {
                     ForEach (vm.charactersList) { character in
                         NavigationLink(destination: CharacterDetailsView(character: character)) {
                             CharacterTile(character: character)
+                                
                         }
                         .buttonStyle(CustomButtonStyle())
                     }.listStyle(.grouped)
+                        
+                    
                     
                     if(vm.hasMorePages) {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle())
                             .onAppear {
                                 vm.loadPage()
-                            }.disabled(!vm.hasMorePages)
+                            }
+                            .disabled(!vm.hasMorePages)
                     }
-                    
-                    
                 }.navigationTitle("Rick and Morty")
             }
         }

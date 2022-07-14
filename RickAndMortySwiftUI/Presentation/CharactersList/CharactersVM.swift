@@ -10,20 +10,9 @@ import Combine
 import Resolver
 import SwiftUI
 
-enum RequestState {
-    case inProgress
-    case success
-    case fail
-    case idle
-}
-
-
 class CharactersVM: ObservableObject {
-    @Injected private var getCharactersPage: IGetCharactersPageUC
-    
-    @Published var requestState: RequestState = .idle
+    @Injected var getCharactersPage: IGetCharactersPageUC
     @Published var charactersList : [Character] = []
-    //    @State private var info: Info? = nil
     
     private var cancelables = [AnyCancellable]()
     private var page = 1
